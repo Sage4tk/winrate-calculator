@@ -15,27 +15,18 @@ const calculateWins = (totalMatches, currentWinRate, wantedWinRate = 50) => {
     const winStatic = wins;
 
     //if wanted winrate is not equal to 50%
-    if (wantedWinRate !== 50) {
-        let neededWins = 0;
-        while (wins / totalMatches < wantedWinRate / 100) {
-            wins++
-            neededWins++;
-        }
+    let neededWins = 0;
+    
+    while (wins / totalMatches <= wantedWinRate / 100) {
+        wins++;
+        totalMatches++
+        neededWins++;
+    }
 
-
-        return {
-            message: `You need ${neededWins} wins to have a ${wantedWinRate}% win rate.`,
-            numberTW: neededWins,
-            wins: winStatic,
-            loses: loses
-        }
-    } 
-
-    //calculate loss and win for 50%
     return {
-        message: `You need ${parseFloat((loses - wins).toFixed(2))} to have a ${wantedWinRate}% win rate`,
-        numberTW: parseFloat((loses - wins).toFixed(2)),
-        wins: wins,
+        message: `You need ${neededWins} wins to have a ${wantedWinRate}% win rate.`,
+        numberTW: neededWins,
+        wins: winStatic,
         loses: loses
-    };
+    }
 }
