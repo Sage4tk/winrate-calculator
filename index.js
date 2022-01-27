@@ -17,7 +17,7 @@ const calculateWins = (totalMatches, currentWinRate, wantedWinRate = 50) => {
     //if wanted winrate is not equal to 50%
     let neededWins = 0;
     
-    while (wins / totalMatches <= wantedWinRate / 100) {
+    while (wins / totalMatches < wantedWinRate / 100) {
         wins++;
         totalMatches++
         neededWins++;
@@ -30,3 +30,5 @@ const calculateWins = (totalMatches, currentWinRate, wantedWinRate = 50) => {
         loses: loses
     }
 }
+
+console.log(calculateWins(100,48,50))
