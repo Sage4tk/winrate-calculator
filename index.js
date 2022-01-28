@@ -30,5 +30,3 @@ const calculateWins = (totalMatches, currentWinRate, wantedWinRate = 50) => {
         loses: loses
     }
 }
-
-console.log(calculateWins(100,48,50))
