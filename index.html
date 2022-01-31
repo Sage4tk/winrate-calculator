@@ -5,18 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./index.js" defer></script>
+    <script src="./app.js" defer></script>
 </head>
 <body>
+    <!-- visuals and information form the inputs-->
+    <div class="visuals">
+
+    </div>
     <!-- form to prompt user for inputs -->
     <form>
         <div>
             <label for="amount-wins">Total Games:</label>
-            <input type="number" name="amount-wins" placeholder="100">
+            <input type="number" name="amount-wins" placeholder="100" required>
         </div>
         <div>
             <label for="winrate">Current Win Rate:</label>
-            <input type="number" name="winrate" placeholder="50%">
+            <input type="number" name="winrate" placeholder="50%" required min="0" max="100">
         </div>
         <div>
             <button type="submit">Calculate</button>

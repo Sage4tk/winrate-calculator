@@ -30,3 +30,17 @@ const calculateWins = (totalMatches, currentWinRate, wantedWinRate = 50) => {
         loses: loses
     }
 }
+
+//input from html
+document.querySelector("form").onsubmit = (e) => {
+    e.preventDefault();
+    //parse inputs
+    const parseTm = parseInt(document.querySelectorAll("input")[0].value);
+    const parseCWR = parseInt(document.querySelectorAll("input")[1].value)
+    //validate inputs
+    if (typeof(parseTm) !== "number" || typeof(parseCWR) !== "number") {
+        console.log("Not a number")
+    } else {
+        console.log(calculateWins(parseTm, parseCWR))
+    }
+}
