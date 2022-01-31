@@ -5,8 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="./index.js" defer></script>
 </head>
 <body>
-    <h1>WIN RATE CALCULATOR</h1>
+    <!-- form to prompt user for inputs -->
+    <form>
+        <div>
+            <label for="amount-wins">Total Games:</label>
+            <input type="number" name="amount-wins" placeholder="100">
+        </div>
+        <div>
+            <label for="winrate">Current Win Rate:</label>
+            <input type="number" name="winrate" placeholder="50%">
+        </div>
+        <div>
+            <button type="submit">Calculate</button>
+        </div>
+    </form>
 </body>
 </html>
