@@ -1,5 +1,4 @@
 //create a calculator to calculate wins needed to have a 50% winrate.
-
 const calculateWins = (totalMatches, currentWinRate, wantedWinRate = 50) => {
 
     //validate if winrate is already over the wanted winrate
@@ -34,13 +33,16 @@ const calculateWins = (totalMatches, currentWinRate, wantedWinRate = 50) => {
 //input from html
 document.querySelector("form").onsubmit = (e) => {
     e.preventDefault();
+
     //parse inputs
     const parseTm = parseInt(document.querySelectorAll("input")[0].value);
-    const parseCWR = parseInt(document.querySelectorAll("input")[1].value)
+    const parseCWR = parseInt(document.querySelectorAll("input")[1].value);
+    const parseWWR = parseInt(document.querySelectorAll("input")[2].value);
+
     //validate inputs
-    if (typeof(parseTm) !== "number" || typeof(parseCWR) !== "number") {
+    if (typeof(parseTm) !== "number" || (typeof(parseCWR) !== "number" || typeof(parseWWR) !== "number")) {
         console.log("Not a number")
     } else {
-        console.log(calculateWins(parseTm, parseCWR))
+        document.querySelector('.visuals').innerHTML = calculateWins(parseTm, parseCWR).message
     }
 }
