@@ -4,7 +4,7 @@ const calculateWins = (totalMatches, currentWinRate, wantedWinRate = 50) => {
     //validate if winrate is already over the wanted winrate
     if (currentWinRate >= wantedWinRate) {
         return {
-            message: `Win percentage is already above ${wantedWinRate};`
+            message: `Win percentage is already above ${wantedWinRate}`
         }
     }
 
@@ -43,6 +43,6 @@ document.querySelector("form").onsubmit = (e) => {
     if (typeof(parseTm) !== "number" || (typeof(parseCWR) !== "number" || typeof(parseWWR) !== "number")) {
         console.log("Not a number")
     } else {
-        document.querySelector('.visuals').innerHTML = calculateWins(parseTm, parseCWR).message
+        document.querySelector('.visuals').innerHTML = calculateWins(parseTm, parseCWR, parseWWR?parseWWR:50).message
     }
 }
