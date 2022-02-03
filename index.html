@@ -6,29 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="./app.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <!-- visuals and information form the inputs-->
-    <div class="visuals">
+    <h1>WIN RATE CALCULATOR</h1>
+    <div class="container">
+        <!-- form to prompt user for inputs -->
+        <form>
+            <div>
+                <label for="amount-wins">Total Games:</label>
+                <input type="number" name="amount-wins" placeholder="100" required>
+            </div>
+            <div>
+                <label for="winrate">Current Win Rate:</label>
+                <input type="number" name="winrate" placeholder="50%" required min="0" max="100">
+            </div>
+            <div>
+                <label for="goal">Wanted Win Rate (50% at default):</label>
+                <input type="number" name="goal" placeholder="50%" min="0" max="100">
+            </div>
+            <div>
+                <button type="submit">Calculate</button>
+            </div>
+        </form>
+        <!-- visuals-->
+        <div class="visuals">
 
+        </div>
     </div>
-    <!-- form to prompt user for inputs -->
-    <form>
-        <div>
-            <label for="amount-wins">Total Games:</label>
-            <input type="number" name="amount-wins" placeholder="100" required>
-        </div>
-        <div>
-            <label for="winrate">Current Win Rate:</label>
-            <input type="number" name="winrate" placeholder="50%" required min="0" max="100">
-        </div>
-        <div>
-            <label for="goal">Wanted Win Rate (50% at default):</label>
-            <input type="number" name="goal" placeholder="50%" min="0" max="100">
-        </div>
-        <div>
-            <button type="submit">Calculate</button>
-        </div>
-    </form>
+    
 </body>
 </html>
