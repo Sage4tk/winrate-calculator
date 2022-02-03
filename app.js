@@ -39,6 +39,14 @@ document.querySelector("form").onsubmit = (e) => {
     const parseCWR = parseInt(document.querySelectorAll("input")[1].value);
     const parseWWR = parseInt(document.querySelectorAll("input")[2].value);
 
+    //display dom variables
+    const explanation = document.querySelectorAll(".remove")
+
+    //remove explantion display
+    explanation.forEach((e) => {
+        e.remove();
+    })
+
     //validate inputs
     if (typeof(parseTm) !== "number" || (typeof(parseCWR) !== "number" || typeof(parseWWR) !== "number")) {
         console.log("Not a number")

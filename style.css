@@ -7,6 +7,7 @@
 }
 
 body {
+  color: #fff;
   background: #464F4F;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -94,11 +95,44 @@ button {
   bottom: -0.4rem;
   left: 0;
   width: 100%;
-  -webkit-transition: background-color 0.2s;
-  transition: background-color 0.2s;
+  -webkit-transition: background-color 0.2s, color 0.5s;
+  transition: background-color 0.2s, color 0.5s;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 button:hover {
   background: #ff1c1c;
+  color: #353839;
+}
+
+.visuals {
+  width: calc(720px - 200px);
+}
+
+.center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.explanation {
+  width: 80%;
+}
+
+.explanation-main {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.explanation-sub {
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */

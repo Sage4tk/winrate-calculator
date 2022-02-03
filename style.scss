@@ -11,6 +11,7 @@ $secondary: #3D4542;
 }
 
 body {
+    color: #fff;
     background: $light;
     display: flex;
     justify-content: center;
@@ -79,9 +80,35 @@ button {
     bottom: -0.4rem;
     left: 0;
     width: 100%;
-    transition: background-color 0.2s;
-
+    transition: background-color 0.2s, color 0.5s;
+    font-weight: bold;
+    font-size: 1.2rem;
     &:hover {
         background: rgb(255, 28, 28);
+        color: $main;
     }
+}
+
+.visuals {
+    width: calc(720px - 200px);
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.explanation {
+    width: 80%;
+}
+
+.explanation-main {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.explanation-sub {
+    text-align: center;
 }
