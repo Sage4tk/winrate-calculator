@@ -30,9 +30,14 @@ const calculateWins = (totalMatches, currentWinRate, wantedWinRate = 50) => {
     }
 }
 
+//if already calculated before checker
+let calculated = false;
+
 //input from html
 document.querySelector("form").onsubmit = (e) => {
     e.preventDefault();
+
+    
 
     //parse inputs
     const parseTm = parseInt(document.querySelectorAll("input")[0].value);
@@ -40,17 +45,51 @@ document.querySelector("form").onsubmit = (e) => {
     const parseWWR = parseInt(document.querySelectorAll("input")[2].value);
 
     //display dom variables
-    const explanation = document.querySelectorAll(".remove")
+    const explanation = document.querySelector(".explanation");
+    const removeContainer = document.querySelector(".bar-container");
 
     //remove explantion display
-    explanation.forEach((e) => {
-        e.remove();
-    });
+    if (!calculated) {
+        explanation.remove();
+    }
+    
 
     //validate inputs
     if (typeof(parseTm) !== "number" || (typeof(parseCWR) !== "number" || typeof(parseWWR) !== "number")) {
-        console.log("Not a number");
+        window.alert("Not a number.")
     } else {
-        document.querySelector('.visuals').innerHTML = calculateWins(parseTm, parseCWR, parseWWR?parseWWR:50).message;
+        // document.querySelector('.visuals').innerHTML = calculateWins(parseTm, parseCWR, parseWWR?parseWWR:50).message;
+        //check if calculated else just change width of visuals
+
+        //target element
+        const targetVisualizer = document.querySelector(".visuals");
+        const removePreviousElement = document.querySelector(".bar-container");
+
+        //remove prev bar
+        if (calculated) {
+            removePreviousElement.remove();
+        }
+
+        //visualizers
+
+        //elements
+        const barContainer = document.createElement("div");
+        barContainer.className = "bar-container";
+        targetVisualizer.appendChild(barContainer);
+
+        const insideContainer = document.createElement("div");
+        insideContainer.className = "inside-container";
+        insideContainer.style.width = parseCWR + "%";
+        barContainer.appendChild(insideContainer);
+        
+
+            
+        
+        
+
+        
+
+        //toggle calculate
+        calculated = true;
     }
 }
