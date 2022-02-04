@@ -45,12 +45,12 @@ document.querySelector("form").onsubmit = (e) => {
     //remove explantion display
     explanation.forEach((e) => {
         e.remove();
-    })
+    });
 
     //validate inputs
     if (typeof(parseTm) !== "number" || (typeof(parseCWR) !== "number" || typeof(parseWWR) !== "number")) {
-        console.log("Not a number")
+        console.log("Not a number");
     } else {
-        document.querySelector('.visuals').innerHTML = calculateWins(parseTm, parseCWR, parseWWR?parseWWR:50).message
+        document.querySelector('.visuals').innerHTML = calculateWins(parseTm, parseCWR, parseWWR?parseWWR:50).message;
     }
 }
