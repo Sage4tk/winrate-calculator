@@ -37,8 +37,6 @@ let calculated = false;
 document.querySelector("form").onsubmit = (e) => {
     e.preventDefault();
 
-    
-
     //parse inputs
     const parseTm = parseInt(document.querySelectorAll("input")[0].value);
     const parseCWR = parseInt(document.querySelectorAll("input")[1].value);
@@ -70,7 +68,7 @@ document.querySelector("form").onsubmit = (e) => {
             removePreviousElement.remove();
         }
 
-        //visualizers
+        //visualizers section
 
         //elements
         const barContainer = document.createElement("div");
@@ -81,13 +79,6 @@ document.querySelector("form").onsubmit = (e) => {
         insideContainer.className = "inside-container";
         insideContainer.style.width = parseCWR + "%";
         barContainer.appendChild(insideContainer);
-        
-
-            
-        
-        
-
-        
 
         //toggle calculate
         calculated = true;
