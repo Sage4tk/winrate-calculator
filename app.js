@@ -36,7 +36,7 @@ let calculated = false;
 //input from html
 document.querySelector("form").onsubmit = (e) => {
     e.preventDefault();
-
+ 
     //parse inputs
     const parseTm = parseInt(document.querySelectorAll("input")[0].value);
     const parseCWR = parseInt(document.querySelectorAll("input")[1].value);
@@ -70,7 +70,16 @@ document.querySelector("form").onsubmit = (e) => {
 
         //visualizers section
 
-        //elements
+        //explantion display
+        const winsDisplay = document.createElement("div");
+        winsDisplay.className = "number-display"
+        targetVisualizer.appendChild(winsDisplay);
+
+        const displayNeededWins = document.createElement("p");
+        displayNeededWins.innerHTML = calculateWins(parseTm, parseCWR, parseWWR).message;
+        winsDisplay.appendChild(displayNeededWins);
+
+        //bar display
         const barContainer = document.createElement("div");
         barContainer.className = "bar-container";
         targetVisualizer.appendChild(barContainer);

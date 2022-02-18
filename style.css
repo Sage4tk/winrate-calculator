@@ -80,7 +80,7 @@ form div > *:first-child {
 
 input {
   background: #3D4542;
-  border: 1px solid #000;
+  border: 0.1px solid #000;
   padding: 0.2rem 0.4rem;
   color: white;
 }
